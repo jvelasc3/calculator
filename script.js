@@ -98,6 +98,7 @@ window.onkeydown = function (e) {
   e.preventDefault();
   let x = e.key;
   let choice;
+  let currentScreen = document.querySelector(".current");
   switch (x) {
     case "1":
       choice = document.querySelector(".one");
@@ -164,8 +165,8 @@ window.onkeydown = function (e) {
       choice.click();
       break;
     case "Backspace":
-      choice = document.querySelector("#clear-btn");
-      choice.click();
+      currentValue = currentScreen.textContent.toString().slice(0, -1);
+      currentScreen.textContent = currentValue;
       break;
   }
 };
